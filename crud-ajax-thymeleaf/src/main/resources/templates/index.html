@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<!-- Tell the browser to be responsive to screen width -->
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+
+<title>Ajax Crud With SpringBoot</title>
+
+<link rel="stylesheet" href="components/DataTables/datatables.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script type="text/javascript" src="components/jquery-3.6.0.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="components/font-awesome/css/font-awesome.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+<script type="text/javascript"
+	src="components/bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="components/bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="components/userjs/user.js"></script>
+
+	<style>
+		#success{
+			background: #DEF1D8;
+			color:green;
+			padding : 10px;
+			margin : 10px;
+			display : none;
+			position : absolute;
+			right : 10px;
+
+		}
+/* 		#error{
+			background: #EFDCDD;
+			color:red;
+			padding : 10px;
+			margin : 10px;
+			display : none;
+			position : absolute;
+			right : 10px;
+			
+		} */
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+			<!-- Navbar content -->
+			<h1 class="text-center">SpringBoot Crud With Ajax and Jquery</h1>
+		</nav>
+		<div class="row mt-5">
+			<div class="col-sm-4">
+				<div id="success"></div>
+				<div id="error"></div>
+				<div class="container">
+					<form id="myForm" name="myForm">
+
+						<input type="hidden" id="id" name="id">
+						<div class="form-group">
+							<label>Student Name</label> <span id="error_name"
+								class="text-danger ms-3"></span> <input type="text" name="name"
+								id="name" placeholder="Enter Student Name"
+								class="form-control name">
+						</div>
+						<div class="form-group">
+							<label>Student Course</label> <span id="error_course"
+								class="text-danger ms-3"></span> <input type="text"
+								name="course" id="course" placeholder="Enter Student Course"
+								class="form-control course">
+						</div>
+						<div class="form-group">
+							<label>Student Fee</label> <span id="error_fee"
+								class="text-danger ms-3"></span> <input type="text" name="fee"
+								id="fee" placeholder="Enter Student Fee"
+								class="form-control fee">
+						</div>
+						<br>
+						<div class="form-group">
+							<button type="button" class="btn btn-info" id="add-button">Registration</button>
+							<button type="reset" class="btn btn-warning" id="reset">Reset</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="col-sm-8">
+				<div class="box box-danger">
+					<div class="box-header">
+						<h3 class="box-title">View Student Data</h3>
+					</div>
+					<div class="box-body">
+						<div class="table-responsive">
+							<table class="table table-bordered table-striped table-hover">
+								<thead>
+									<tr align="center">
+										<th>S.No.</th>
+										<th>Name</th>
+										<th>Course</th>
+										<th>Fee</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody id="tbody"></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
